@@ -3,6 +3,9 @@
 .title {
   color: #FFF8DC;
 }
+.title:hover {
+  color: #FFF8DC;
+}
 .header-left h1 {
   font-size: 4em;
 
@@ -17,7 +20,7 @@ a {
 }
 
 a:hover {
-  color: #FFE4C4;
+  color: #b30000;
   text-decoration: none;
 }
 
@@ -85,6 +88,7 @@ textarea:focus {
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
+  box-shadow: 0px 4px 4px gray;
 
 }
 .header-left {
@@ -110,13 +114,15 @@ textarea:focus {
   background-color: #FFF8DC;
 }
 
-
 .sidebar {
   float: left;
   border-right: 2px solid #8B4513;
-  background-color: #FFF8DC;
+  box-shadow: 3px 0px 5px -1px gray;
+  background-color: #fff0b3;
   padding: 20px;
+  padding-left: 50px;
   width: 25%;
+  height: 100%;
   min-width: 160px;
 }
 
@@ -125,8 +131,12 @@ textarea:focus {
   float: left;
   margin-top: 15px;
   margin-left: 10px;
-  font-size: 1.2em
+  font-size: 1.2em;
 }
+.signin:hover {
+  color: #FFE4C4;
+}
+
 .uname {
   float:left;
   margin-top: 15px;
