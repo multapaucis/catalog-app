@@ -14,19 +14,21 @@ import json
 import random
 import string
 import requests
+import console
 
 engine = create_engine(
-    'sqlite:///libraryUser.db',
-    connect_args={'check_same_thread': False},
+    'postgresql+psycopg2://ubuntu:ubuntu@localhost/library',
     poolclass=StaticPool)
 
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 app = Flask(__name__)
+app.config['SESSION_TYPE'] = 'filesystem'
+app.secret_key = 'thisismysecretkeyforthelibraryapp'
 
 CLIENT_ID = json.loads(
-    open('client_secrets.json', 'r').read())['web']['client_id']
+    open('/var/www/CatalogApp/CatalogApp/client_secrets.json', 'r').read())['web']['client_id']
 
 
 # Homepage that shows genres and latest books added
@@ -216,7 +218,7 @@ def gconnect():
         return response
     # Obtain authorization code
     code = request.data
-
+    console.alert("Testing")
     try:
         # Upgrade the authorization code into a credentials object
         oauth_flow = flow_from_clientsecrets('client_secrets.json', scope='')
@@ -359,6 +361,5 @@ def createUser():
 
 
 if __name__ == '__main__':
-    app.secret_key = 'my_secret_key'
     app.debug = True
-    app.run(host='0.0.0.0', port=8000)
+    app.run()

@@ -57,6 +57,6 @@ class Book(Base):
         }
 
 
-engine = create_engine('sqlite:///libraryUser.db')
+engine = create_engine('postgresql+psycopg2://ubuntu:ubuntu@localhost/library')
 
 Base.metadata.create_all(engine)
