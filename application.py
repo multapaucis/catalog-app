@@ -14,7 +14,6 @@ import json
 import random
 import string
 import requests
-import console
 
 engine = create_engine(
     'postgresql+psycopg2://ubuntu:ubuntu@localhost/library',
@@ -218,7 +217,7 @@ def gconnect():
         return response
     # Obtain authorization code
     code = request.data
-    console.log("Testing")
+
     try:
         # Upgrade the authorization code into a credentials object
         oauth_flow = flow_from_clientsecrets('/var/www/CatalogApp/CatalogApp/client_secrets.json', scope='')
