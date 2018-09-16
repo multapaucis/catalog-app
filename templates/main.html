@@ -9,15 +9,20 @@
     {% endblock %}
   </head>
   <body>
-    <div class="row header">
-      <div class="header-left">
+    <div id="left" class="column">
+      <div class="top-left header">
         <h1>
           <a href="{{url_for('index')}}" class="title">
             The Library
           </a>
         </h1>
       </div>
-      <div class="header-right text-right">
+      <div class="sidebar bottom">
+        {% include "sidebar.html" %}
+      </div>
+    </div>
+    <div id="right" class="column">
+      <div class="top-right header text-right">
         {% if 'username' not in session %}
           <a href="{{url_for('showLogin')}}" class="signin">Click Here to Login</a>
         {% else %}
@@ -35,12 +40,7 @@
           {% endif %}
         {% endwith %}
       </div>
-    </div>
-    <div class="main-page">
-      <div class="sidebar">
-        {% include "sidebar.html" %}
-      </div>
-      <div class="container">
+      <div class="container bottom">
         {% block content %}
         {% endblock %}
       </div>
