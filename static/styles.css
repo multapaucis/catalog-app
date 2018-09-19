@@ -1,6 +1,7 @@
 
 html {
     height: 100%;
+    width: 100%;
 }
 
 body {
@@ -10,6 +11,7 @@ body {
   margin: 0px;
   display: flex;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .column {
@@ -20,11 +22,11 @@ body {
 
 #left {
     flex-shrink: 0;
-    width: 25%;
+    width: 20%;
 }
 
 #right {
-  width: :75%;
+  width: 80%;
 }
 
 .title {
@@ -32,10 +34,6 @@ body {
 }
 .title:hover {
   color: #FFF8DC;
-}
-.header-left h1 {
-  font-size: 4em;
-
 }
 
 a, p, h1, h2, h3, label, span, input {
@@ -55,7 +53,7 @@ a:hover {
 .flash {
   text-align: center;
   font-size: 1.2em;
-  color: #FFFFFF;
+  color: #000000;
 }
 
 input[type=text]:focus {
@@ -109,25 +107,36 @@ textarea:focus {
 
 .header {
   background-color: #8B4513;
-  height: 130px;
-  box-shadow: 0px 4px 4px gray;
+  height: 15%;
+  max-height: 130px;
+  min-height: 80px;
 
 }
 .top-left {
-  width: 75%;
-  padding-left: 5%;
-  padding-top: 20px;
-  height: 100px;
+  width: 100%;
   flex-shrink: 0;
+  display: inline-flex;
+}
+.title-holder {
+  margin-left: 10px;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottome: 0;
+  height: auto;
 }
 .top-right {
   float: right;
-  height: 100px;
   padding-right: 5%;
-  padding-top: 15px;
-  direction: rtl;
   flex-shrink: 0;
   display: inline-flex;
+}
+.login {
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: auto;
+  margin-bottom: 0;
+  text-align: right;
+  vertical-align: text-bottom;
 }
 
 .bottom {
@@ -135,7 +144,7 @@ textarea:focus {
     overflow-y: auto;
 }
 .container {
-  width: 75%;
+  width: 100%;
   float: left;
   padding: 20px;
   background-color: #FFF8DC;
@@ -144,13 +153,11 @@ textarea:focus {
 .sidebar {
   float: left;
   border-right: 2px solid #8B4513;
-  box-shadow: 3px 0px 5px -1px gray;
   background-color: #fff0b3;
   padding: 20px;
   padding-left: 50px;
-  width: 25%;
+  width: 100%;
   height: 100%;
-  min-width: 160px;
 }
 
 .signin {
@@ -167,12 +174,13 @@ textarea:focus {
 .uname {
   float:left;
   margin-top: 15px;
-  font-size: 1.2em
+  font-size: 1.2em;
+  color: #FFF8DC;
 }
 .propic {
-  float: left;
+  float:left;
   border-radius: 50%;
-  margin-left: 10px;
+  margin: 5px;
 }
 
 .col-label {
@@ -194,13 +202,16 @@ textarea:focus {
     clear: both;
 }
 
-@media screen and (max-width: 1070px) {
+@media screen and (max-width: 1000px) {
+  
+  #left {
+    width: 40%;
+  }
+  #right{
+    width: 60%;  
+  }
   .sidebar {
-    border-bottom: 2px solid #8B4513;
-    border-right: none;
-    background-color: #FFF8DC;
     padding: 20px;
-    width: 100%;
   }
   .container {
     width: 100%;

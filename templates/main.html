@@ -11,11 +11,11 @@
   <body>
     <div id="left" class="column">
       <div class="top-left header">
-        <h1>
+        <div class="title-holder">
           <a href="{{url_for('index')}}" class="title">
-            The Library
+            <h1>The Library</h1>
           </a>
-        </h1>
+       </div>
       </div>
       <div class="sidebar bottom">
         {% include "sidebar.html" %}
@@ -23,13 +23,15 @@
     </div>
     <div id="right" class="column">
       <div class="top-right header text-right">
+        <div class="login">
         {% if 'username' not in session %}
           <a href="{{url_for('showLogin')}}" class="signin">Click Here to Login</a>
         {% else %}
           <span class="uname">{{session.username}}</span>
-          <img src="{{session.picture}}" alt="profile picture" heigh="40" width="40" class="propic">
+          <img src="{{session.picture}}" alt="profile picture" height="40" width="40" class="propic">
           <a href="{{url_for('logout')}}" class="signin">Logout</a>
         {% endif %}
+      </div>
       </div>
       <div class = 'flash'>
         {% with messages = get_flashed_messages() %}
