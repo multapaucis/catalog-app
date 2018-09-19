@@ -2,13 +2,13 @@
 
 1. The Static IP address for this project is 54.200.117.233 and port 2200 is available for SSH
 2. The website can be viewed at http://54.200.117.233.xip.io/
-3. A summary of software you installed and configuration changes made. This is a Flask/SQLalchemy website written in Python 2. It is installed on a Ubuntu based server using the following packages:
-  - Apache2
-  - PostgreSQL
-  - psycopg2
-  - Flask
-  - SQLalchemy
-  - Oauth2
+3. This is a Flask/SQLalchemy website written in Python 2. It is installed on a Ubuntu based server on Amazon's Lightrail Service. Ubuntu was configured by adding 2 additional root users; updating all packages; adding a firewall that only allows communication on ports 80, 123, and 2200; disabling root access; creation of a login key; and requiring said key for login. Creation of the web app was done with the following packages:
+    - Apache2, as the Http server
+    - PostgreSQL, for Database management
+    - psycopg2, for communication between Python and PostgreSQL
+    - Flask, as a web framework
+    - SQLalchemy, to simplify database operations
+    - Oauth2, to allow Google Authentication and Login
 4. This project was made possible with assistance from Stack Overflow, Xip.io, w3 Schools, and  of course my Udacity Lessons
 
 
